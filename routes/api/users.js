@@ -17,11 +17,6 @@ const { ExtractJwt } = require('passport-jwt');
 const { json } = require('body-parser');
 const { Passport } = require('passport');
 
-// @route   GET api/users/test
-// @desc    Test users route
-// @access  Public route
-router.get('/test', (req, res) => res.json({msg: "Users Works"}));
-
 // @route   GET api/users/register
 // @desc    Register User
 // @access  Public route
