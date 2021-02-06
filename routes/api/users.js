@@ -4,12 +4,14 @@ const gravatar = require('gravatar');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
+const passport = require('passport');
 
 // Load User model
 const User = require('../../models/User');
 const { JsonWebTokenError } = require('jsonwebtoken');
 const { ExtractJwt } = require('passport-jwt');
 const { json } = require('body-parser');
+const { Passport } = require('passport');
 
 // @route   GET api/users/test
 // @desc    Test users route
@@ -81,10 +83,23 @@ router.post('/login', (req, res) => {
                                 });
                             });
                     } else {
-                        return res.status(400).json({ password: 'Password incorrect' })
+                        return res.status(400).json({ password: 'Password incorrect' });
                     }
                 })
         })
 });
+
+// @route   GET api/users/current
+// @desc    Return current User
+// @access  Private route
+router.get('/current', passport.authenticate('jwt', { session: false} ),
+    (req, res) => {
+        res.json({
+            id: req.user.id,
+            name: req.user.name,
+            email: req.user.email
+        });
+    }
+);
 
 module.exports = router;
