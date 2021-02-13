@@ -9,27 +9,27 @@ module.exports = function validateRegisterInput(data) {
     data.password2 = !isEmpty(data.password2) ? data.password2 : '';
 
     // Name Validation
-    if(Validator.isEmpty(data.name)) {
+    if (Validator.isEmpty(data.name)) {
         errors.name = 'Name is requried';
-    } else if(!Validator.isLength(data.name, { min: 2, max: 50})) {
+    } else if (!Validator.isLength(data.name, { min: 2, max: 50 })) {
         errors.name = 'Name must be between 2 and 50 characters';
     }
 
     // Email Validation
-    if(Validator.isEmpty(data.email)) {
+    if (Validator.isEmpty(data.email)) {
         errors.email = 'Email is required';
-    } else if(!Validator.isEmail(data.email)) {
+    } else if (!Validator.isEmail(data.email)) {
         errors.email = 'Email is invalid';
     }
 
     // Password Validation
-    if(Validator.isEmpty(data.password)) {
+    if (Validator.isEmpty(data.password)) {
         errors.password = 'Password is required';
-    } else if(!Validator.isLength(data.password, { min: 8, max: 30})) {
+    } else if (!Validator.isLength(data.password, { min: 8, max: 30 })) {
         errors.password = 'Password must be between 8 and 30 characters';
-    } else if(Validator.isEmpty(data.password2)) {
+    } else if (Validator.isEmpty(data.password2)) {
         errors.password2 = 'Confirm Password is required';
-    } else if(!Validator.equals(data.password, data.password2)) {
+    } else if (!Validator.equals(data.password, data.password2)) {
         errors.password2 = 'Both passwords must be same'
     }
 
