@@ -13,8 +13,10 @@
     "react-redux": "^7.2.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.2",
+    "react-tsparticles": "^1.18.12",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
+    "tsparticles": "^1.18.12",
     "web-vitals": "^1.1.0"
   },
   "scripts": {
