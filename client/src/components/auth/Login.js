@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import propTypes from 'prop-types'
-import classnames from 'classnames'
 import { connect } from 'react-redux'
 import { loginUser } from '../../actions/authActions'
 import TextFieldGroup from '../common/TextFieldGroup'
@@ -53,7 +52,7 @@ class Login extends Component {
         const { errors } = this.state;
 
         return (
-            <div className="login login-inner">
+            <div className="login padding">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-8 m-auto">

@@ -13,16 +13,13 @@ img {
   z-index: 1 !important;
 }
 
-.landing-inner {
-  padding-top: 120px;
+.dashboard{
+  z-index: 1 !important;
 }
 
-.login-inner {
-  padding-top: 120px;
-}
-
-.register-inner {
-  padding-top: 120px;
+.padding {
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 .dark-overlay {
@@ -71,5 +68,5 @@ img {
   width: 100%;
   text-align: center;
   color: #ffffff;
-  z-index: 1 !important;
+  z-index: 2 !important;
 }
