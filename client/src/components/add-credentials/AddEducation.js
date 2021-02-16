@@ -10,7 +10,7 @@ class AddEducation extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      school: '',
+      institute: '',
       degree: '',
       fieldofstudy: '',
       from: '',
@@ -36,7 +36,7 @@ class AddEducation extends Component {
     e.preventDefault();
 
     const eduData = {
-      school: this.state.school,
+      institute: this.state.institute,
       degree: this.state.degree,
       fieldofstudy: this.state.fieldofstudy,
       from: this.state.from,
@@ -72,16 +72,16 @@ class AddEducation extends Component {
               </Link>
               <h1 className="display-4 text-center">Add Education</h1>
               <p className="lead text-center">
-                Add any school, bootcamp, etc that you have attended
+                Add any institute, bootcamp, etc that you have attended
               </p>
               <small className="d-block pb-3">* = required fields</small>
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
-                  placeholder="* School"
-                  name="school"
-                  value={this.state.school}
+                  placeholder="* Institute"
+                  name="institute"
+                  value={this.state.institute}
                   onChange={this.onChange}
-                  error={errors.school}
+                  error={errors.institute}
                 />
                 <TextFieldGroup
                   placeholder="* Degree or Certification"

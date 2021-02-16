@@ -12,15 +12,15 @@ class Education extends Component {
   render() {
     const education = this.props.education.map(edu => (
       <tr key={edu._id}>
-        <td>{edu.school}</td>
+        <td>{edu.institute}</td>
         <td>{edu.degree}</td>
         <td>
           <Moment format="YYYY/MM/DD">{edu.from}</Moment> -
           {edu.to === null ? (
             ' Now'
           ) : (
-            <Moment format="YYYY/MM/DD">{edu.to}</Moment>
-          )}
+              <Moment format="YYYY/MM/DD">{edu.to}</Moment>
+            )}
         </td>
         <td>
           <button
@@ -38,7 +38,7 @@ class Education extends Component {
         <table className="table">
           <thead>
             <tr>
-              <th>School</th>
+              <th>Institute</th>
               <th>Degree</th>
               <th>Years</th>
               <th />
