@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import classnames from 'classnames';
 import { Link } from 'react-router-dom';
 import { deletePost, addLike, removeLike } from '../../actions/postActions';
+import ReactMarkdown from 'react-markdown';
+import gfm from 'remark-gfm';
 
 class PostItem extends Component {
   onDeleteClick(id) {
@@ -42,10 +44,16 @@ class PostItem extends Component {
               />
             </a>
             <br />
-            <p className="text-center">{post.name}</p>
+            <p className="text-center">
+              <kbd>
+                {post.name}
+              </kbd>
+            </p>
           </div>
-          <div className="col-md-10">
-            <p className="lead">{post.text}</p>
+          <div className="col-md-10 preview">
+            <p className="lead">
+              <ReactMarkdown plugins={[gfm]} source={post.text} />
+            </p>
             {showActions ? (
               <span>
                 <button
