@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { deleteComment } from '../../actions/postActions';
+import ReactMarkdown from 'react-markdown';
+import gfm from 'remark-gfm';
+
 
 class CommentItem extends Component {
   onDeleteClick(postId, commentId) {
@@ -23,10 +26,16 @@ class CommentItem extends Component {
               />
             </a>
             <br />
-            <p className="text-center">{comment.name}</p>
+            <p className="text-center">
+              <kbd>
+                {comment.name}
+              </kbd>
+            </p>
           </div>
           <div className="col-md-10">
-            <p className="lead">{comment.text}</p>
+            <p className="lead">
+              <ReactMarkdown plugins={[gfm]} source={comment.text} />
+            </p>
             {comment.user === auth.user.id ? (
               <button
                 onClick={this.onDeleteClick.bind(this, postId, comment._id)}
