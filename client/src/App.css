@@ -18,7 +18,7 @@ img {
 }
 
 .padding {
-  padding-top: 80px;
+  padding-top: 100px;
   padding-bottom: 80px;
 }
 
@@ -68,5 +68,14 @@ img {
   width: 100%;
   text-align: center;
   color: #ffffff;
+  z-index: 2 !important;
+}
+
+.dock {
+  padding: 4rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   z-index: 2 !important;
 }

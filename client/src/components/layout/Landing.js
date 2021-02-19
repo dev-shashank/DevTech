@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux'
+import LandingDock from './LandingDock'
+import { isMobile } from 'react-device-detect'
 
 class Landing extends Component {
     componentDidMount() {
@@ -11,6 +13,14 @@ class Landing extends Component {
     }
 
     render() {
+        let dockContent;
+        if (!isMobile) {
+            dockContent = (
+                <div>
+                    <LandingDock />
+                </div>
+            );
+        };
         return (
             <div className="landing">
                 <div className="dark-overlay padding text-light">
@@ -27,6 +37,7 @@ class Landing extends Component {
                         </div>
                     </div>
                 </div>
+                {dockContent}
             </div>
         )
     }
