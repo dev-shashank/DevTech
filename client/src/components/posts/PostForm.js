@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
 import { addPost } from '../../actions/postActions';
+import Markdown from '../common/Markdown'
 
 class PostForm extends Component {
   constructor(props) {
@@ -51,12 +52,16 @@ class PostForm extends Component {
           <div className="card-body">
             <form onSubmit={this.onSubmit}>
               <div className="form-group">
+                <a target="_blank" rel="tag" href='https://www.markdownguide.org/basic-syntax/'>Markdown Syntax</a>
                 <TextAreaFieldGroup
-                  placeholder="Create a post"
+                  placeholder="Create a post!! Use Markdown syntax and Check Preview before posting"
                   name="text"
                   value={this.state.text}
                   onChange={this.onChange}
                   error={errors.text}
+                />
+                <Markdown
+                  value={this.state.text}
                 />
               </div>
               <button type="submit" className="btn btn-dark">
