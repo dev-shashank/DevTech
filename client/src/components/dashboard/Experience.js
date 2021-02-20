@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Moment from 'react-moment';
@@ -43,7 +44,12 @@ class Experience extends Component {
               <th>Company</th>
               <th>Title</th>
               <th>TimeLine</th>
-              <th />
+              <th>
+                <Link to="/add-experience" className="btn btn-light">
+                  <i className="fab fa-black-tie mr-2" />
+                    Add Experience
+                </Link>
+              </th>
             </tr>
           </thead>
           {experience}

@@ -8,6 +8,8 @@ import InputGroup from '../common/InputGroup';
 import SelectListGroup from '../common/SelectListGroup';
 import { createProfile, getCurrentProfile } from '../../actions/profileActions';
 import isEmpty from '../../validation/is-empty';
+import Experience from '../dashboard/Experience';
+import Education from '../dashboard/Education';
 
 class CreateProfile extends Component {
   constructor(props) {
@@ -120,6 +122,7 @@ class CreateProfile extends Component {
 
   render() {
     const { errors, displaySocialInputs } = this.state;
+    const { profile } = this.props.profile;
 
     let socialInputs;
 
@@ -279,6 +282,8 @@ class CreateProfile extends Component {
                   </button>
                 </div>
                 {socialInputs}
+                <Experience experience={profile.experience} />
+                <Education education={profile.education} />
                 <input
                   type="submit"
                   value="Submit"

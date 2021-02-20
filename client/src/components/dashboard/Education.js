@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Moment from 'react-moment';
@@ -43,7 +44,12 @@ class Education extends Component {
               <th>Institute</th>
               <th>Degree</th>
               <th>TimeLine</th>
-              <th />
+              <th>
+                <Link to="/add-education" className="btn btn-light">
+                  <i className="fas fa-graduation-cap mr-2" />
+                    Add Education
+                </Link>
+              </th>
             </tr>
           </thead>
           {education}
