@@ -25,11 +25,11 @@ class Dashboard extends Component {
         let dashboardContent;
         let welcomeMsg;
 
-        if (currHour > 12 && currHour < 18) {
+        if (currHour >= 12 && currHour < 18) {
             welcomeMsg = (
                 "Good Afternoon!! "
             )
-        } else if (currHour > 18) {
+        } else if (currHour >= 18) {
             welcomeMsg = (
                 "Good Evening!! "
             )
