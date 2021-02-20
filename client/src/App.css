@@ -79,8 +79,7 @@ img {
   padding: 4rem;
   position: fixed;
   bottom: 0;
-  left: 0;
-  right: 0;
+  left: 2.5%;
   z-index: 2 !important;
 }
 

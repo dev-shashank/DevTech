@@ -16,7 +16,8 @@ class Landing extends Component {
 
     render() {
         let dockContent;
-        if (!isMobile) {
+        let aspectRatio = window.innerWidth / window.innerHeight;
+        if (!isMobile && aspectRatio > (16 / 9)) {
             dockContent = (
                 <div>
                     <LandingDock />
