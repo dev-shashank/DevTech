@@ -196,7 +196,7 @@ class CreateProfile extends Component {
                 Go Back
               </Link>
               <h1 className="display-4 text-center">Edit Profile</h1>
-              <small className="d-block pb-3">* = required fields</small>
+              <small className="d-block pb-3">* mandatory fields</small>
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
                   placeholder="* Profile Handle"
@@ -277,13 +277,12 @@ class CreateProfile extends Component {
                   >
                     Add Social Network Links
                   </button>
-                  <span className="text-muted">Optional</span>
                 </div>
                 {socialInputs}
                 <input
                   type="submit"
                   value="Submit"
-                  className="btn btn-info btn-block mt-4"
+                  className="btn btn-success btn-block mt-4"
                 />
               </form>
             </div>

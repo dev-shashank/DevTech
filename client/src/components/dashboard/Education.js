@@ -11,40 +11,42 @@ class Education extends Component {
 
   render() {
     const education = this.props.education.map(edu => (
-      <tr key={edu._id}>
-        <td>{edu.institute}</td>
-        <td>{edu.degree}</td>
-        <td>
-          <Moment format="YYYY/MM/DD">{edu.from}</Moment> -
+      <tbody>
+        <tr key={edu._id}>
+          <td>{edu.institute}</td>
+          <td>{edu.degree}</td>
+          <td>
+            <Moment format="DD-MM-YYYY">{edu.from}</Moment> -
           {edu.to === null ? (
-            ' Now'
-          ) : (
-              <Moment format="YYYY/MM/DD">{edu.to}</Moment>
-            )}
-        </td>
-        <td>
-          <button
-            onClick={this.onDeleteClick.bind(this, edu._id)}
-            className="btn btn-danger"
-          >
-            Delete
-          </button>
-        </td>
-      </tr>
+              ' Now'
+            ) : (
+                <Moment format="DD-MM-YYYY">{edu.to}</Moment>
+              )}
+          </td>
+          <td>
+            <button
+              onClick={this.onDeleteClick.bind(this, edu._id)}
+              className="btn btn-danger"
+            >
+              <i className="fas fa-times" />
+            </button>
+          </td>
+        </tr>
+      </tbody>
     ));
     return (
       <div>
-        <h4 className="mb-4">Education Credentials</h4>
-        <table className="table">
+        <h4 className="mb-4">Education:</h4>
+        <table className="table table-light table-hover">
           <thead>
-            <tr>
+            <tr className="bg-dark text-light">
               <th>Institute</th>
               <th>Degree</th>
-              <th>Years</th>
+              <th>TimeLine</th>
               <th />
             </tr>
-            {education}
           </thead>
+          {education}
         </table>
       </div>
     );

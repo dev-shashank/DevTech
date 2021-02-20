@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
 import { addPost } from '../../actions/postActions';
@@ -48,11 +49,11 @@ class PostForm extends Component {
     return (
       <div className="post-form mb-3">
         <div className="card card-info">
-          <div className="card-header bg-info text-white">What's new today...</div>
+          <div className="card-header bg-dark text-white">What's new today...</div>
           <div className="card-body">
             <form onSubmit={this.onSubmit}>
               <div className="form-group">
-                <a target="_blank" rel="tag" href='https://www.markdownguide.org/basic-syntax/'>Markdown Syntax</a>
+                <a class="btn btn-outline-info float-right" target="_blank" rel="tag" href='https://www.markdownguide.org/basic-syntax/'>Markdown Syntax</a>
                 <TextAreaFieldGroup
                   placeholder="Create a post!! Use Markdown syntax and Check Preview before posting"
                   name="text"
@@ -64,7 +65,7 @@ class PostForm extends Component {
                   value={this.state.text}
                 />
               </div>
-              <button type="submit" className="btn btn-dark">
+              <button type="submit" className="btn btn-outline-success">
                 Submit
               </button>
             </form>

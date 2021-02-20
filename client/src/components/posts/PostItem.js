@@ -75,14 +75,14 @@ class PostItem extends Component {
                 >
                   <i className="text-secondary fas fa-thumbs-down" />
                 </button>
-                <Link to={`/post/${post._id}`} className="btn btn-info mr-1">
+                <Link to={`/post/${post._id}`} className="btn btn-outline-info mr-1">
                   Comments
                 </Link>
                 {post.user === auth.user.id ? (
                   <button
                     onClick={this.onDeleteClick.bind(this, post._id)}
                     type="button"
-                    className="btn btn-danger mr-1"
+                    className="btn btn-outline-danger mr-1"
                   >
                     <i className="fas fa-times" />
                   </button>

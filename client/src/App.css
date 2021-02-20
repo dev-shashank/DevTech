@@ -79,3 +79,8 @@ img {
   right: 0;
   z-index: 2 !important;
 }
+
+.table {
+    table-layout: fixed;
+    word-wrap: break-word;
+}

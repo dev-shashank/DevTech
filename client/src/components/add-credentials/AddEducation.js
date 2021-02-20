@@ -72,9 +72,9 @@ class AddEducation extends Component {
               </Link>
               <h1 className="display-4 text-center">Add Education</h1>
               <p className="lead text-center">
-                Add any institute, bootcamp, etc that you have attended
+                Add an institute, bootcamp, etc that you have attended
               </p>
-              <small className="d-block pb-3">* = required fields</small>
+              <small className="d-block pb-3">* mandatory fields</small>
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
                   placeholder="* Institute"
@@ -139,7 +139,7 @@ class AddEducation extends Component {
                 <input
                   type="submit"
                   value="Submit"
-                  className="btn btn-info btn-block mt-4"
+                  className="btn btn-success btn-block mt-4"
                 />
               </form>
             </div>

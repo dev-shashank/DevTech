@@ -19,12 +19,12 @@ class Navbar extends Component {
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
           <Link className="nav-link" to="/feed">
-            Post Feed
+            <button type="button" class="btn btn-outline-primary">Post Feed</button>
           </Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link" to="/dashboard">
-            Dashboard
+            <button type="button" class="btn btn-outline-secondary">Dashboard</button>
           </Link>
         </li>
         <li className="nav-item">
@@ -33,14 +33,15 @@ class Navbar extends Component {
             onClick={this.onLogoutClick.bind(this)}
             className="nav-link"
           >
+            <button type="button" class="btn btn-outline-danger">Logout</button>
+            {' '}
             <img
               className="rounded-circle"
               src={user.avatar}
               alt={user.name}
               style={{ width: '25px', marginRight: '5px' }}
               title="You must have a Gravatar connected to your email to display an image"
-            />{' '}
-            Logout
+            />
           </a>
         </li>
       </ul>
@@ -50,12 +51,12 @@ class Navbar extends Component {
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
           <Link className="nav-link" to="/register">
-            Sign Up
+            <button type="button" class="btn btn-outline-primary">Sign Up</button>
           </Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link" to="/login">
-            Login
+            <button type="button" class="btn btn-outline-success">Login</button>
           </Link>
         </li>
       </ul>
@@ -64,7 +65,9 @@ class Navbar extends Component {
     return (
       <nav className="navbar navbar-expand-sm navbar-light bg-light mb-4 fixed-top">
         <div className="container">
-          <Link className="navbar-brand" to="/">DevTech</Link>
+          <Link className="navbar-brand" to="/">
+            <button type="button" class="btn btn-dark">DevTech</button>
+          </Link>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobile-nav" aria-label="Justify">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -74,7 +77,7 @@ class Navbar extends Component {
               <li className="nav-item">
                 <Link className="nav-link" to="/profiles">
                   {' '}
-                  Developers
+                  <button type="button" class="btn btn-outline-info">Developers</button>
                 </Link>
               </li>
             </ul>

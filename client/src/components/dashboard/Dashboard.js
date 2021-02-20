@@ -20,8 +20,24 @@ class Dashboard extends Component {
     render() {
         const { user } = this.props.auth;
         const { profile, loading } = this.props.profile;
+        const currHour = new Date().getHours();
 
         let dashboardContent;
+        let welcomeMsg;
+
+        if (currHour > 12 && currHour < 18) {
+            welcomeMsg = (
+                "Good Afternoon!! "
+            )
+        } else if (currHour > 18) {
+            welcomeMsg = (
+                "Good Evening!! "
+            )
+        } else {
+            welcomeMsg = (
+                "Good Morning!! "
+            )
+        }
 
         if (profile === null || loading) {
             dashboardContent = <Spinner />;
@@ -31,7 +47,9 @@ class Dashboard extends Component {
                 dashboardContent = (
                     <div>
                         <p className="lead text-muted">
-                            Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
+                            <Link to={`/profile/${profile.handle}`}>
+                                <button type="button" class="btn btn-outline-link">{welcomeMsg}{user.name}</button>
+                            </Link>
                         </p>
                         <ProfileActions />
                         <Experience experience={profile.experience} />

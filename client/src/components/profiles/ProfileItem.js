@@ -8,7 +8,7 @@ class ProfileItem extends Component {
     const { profile } = this.props;
 
     return (
-      <div className="card card-body bg-light mb-3">
+      <div className="card card-body bg-dark text-light mb-3">
         <div className="row">
           <div className="col-2">
             <img src={profile.user.avatar} alt="" className="rounded-circle" />
@@ -26,13 +26,13 @@ class ProfileItem extends Component {
                 <span>{profile.location}</span>
               )}
             </p>
-            <Link to={`/profile/${profile.handle}`} className="btn btn-info">
+            <Link to={`/profile/${profile.handle}`} className="btn btn-outline-info">
               View Profile
             </Link>
           </div>
           <div className="col-md-4 d-none d-md-block">
             <h4>Skill Set</h4>
-            <ul className="list-group">
+            <ul className="list-group text-dark">
               {profile.skills.slice(0, 4).map((skill, index) => (
                 <li key={index} className="list-group-item">
                   <i className="fa fa-check pr-1" />
